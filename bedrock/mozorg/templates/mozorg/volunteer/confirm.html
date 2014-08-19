@@ -1,0 +1,69 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% add_lang_files "mozorg/volunteer" %}
+
+{% extends "mozorg/base-resp.html" %}
+
+{% block page_title %}{{_('Thank you!: Volunteer Opportunities at Mozilla')}}{% endblock %}
+{% block body_id %}volunteer{% endblock %}
+{% block body_class %}sand confirm{% endblock %}
+
+{% block page_css %}
+  {{ css('volunteer') }}
+{% endblock %}
+
+{% block js %}
+  {{ js('volunteer') }}
+  {{ js('contribute-form') }}
+{% endblock %}
+
+{% block string_data %}
+  {# L10n: Used as a label for a button that plays a video. #}
+  data-button-play='{{_('Play video')}}'
+  {# L10n: Used as a label for a button that pauses a video. #}
+  data-button-pause='{{_('Pause video')}}'
+{% endblock %}
+
+{% block site_header_nav %}{% endblock %}
+{% block site_header_logo %}{% endblock %}
+
+{% block content %}
+<main role="main">
+  <header class="page-head">
+    <nav class="volunteer-nav">
+      <div class="container">
+        <ul>
+          <li><a href="{{ url('mozorg.volunteer.index') }}">{{ _('Volunteer overview') }}</a></li>
+          <li><a href="{{ url('mozorg.volunteer.events') }}">{{ _('Worldwide events') }}</a></li>
+          <li><a href="#">{{ _('Mozillian stories') }}</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="page-title">{{ _('Thanks! We can’t <br>wait to meet you.') }}</h1>
+      <h2 class="section-tagline">{{ _('You will be receiving an email soon from a Mozilla mentor.') }}</h2>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class=" confirm-body">
+      <div class="mozillians-profile"></div>
+      <h2 class="section-title">{{ _('In the meantime&hellip;') }}</h2>
+      <p class="section-tagline">{{ _('Unlock your Mozillians account to connect with fellow Mozillians right away.') }}</p>
+      <p class="cta"><a href="#" class="button-hollow">{{ _('I’ll just wait for the email') }}</a></p>
+      <p class="cta"><a href="#" class="button-flat">{{ _('Yes, unlock my Mozillians account *') }}</a></p>
+      <p class="note">{{ _('* You will be asked to sign in to Mozillians before proceeding') }}</p>
+    </div>
+    </div>
+  </section>
+
+
+</main>
+{% endblock %}
+
+{% block email_form %}{% endblock %}
+
