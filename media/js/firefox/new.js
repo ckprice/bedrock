@@ -58,8 +58,7 @@
     // conditions in which scene2 should not be shown, even when the
     // #download-fx hash is set
     var no_scene2 = (
-           $html.hasClass('firefox-latest')
-        || site.platform === 'other'    // no download available
+           site.platform === 'other'    // no download available
         || site.platform === 'ios'      // unsupported platform
         || site.platform === 'fxos'     // no download available
         || site.platform === 'android'  // download goes to Play Store
