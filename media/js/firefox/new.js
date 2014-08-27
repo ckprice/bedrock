@@ -219,13 +219,13 @@
             // initiate download/scene2 if coming directly to #download-fx
             if (window.location.hash === '#download-fx') {
                 if (no_scene2) {
-                    // if using latest Firefox or an unsupported platform just
-                    // try to drop the URL hash
+                    // if using an unsupported platform just try to drop the URL hash
                     if (window.history && window.history.replaceState) {
                         var uri = window.location.href.split('#')[0];
                         window.history.replaceState({}, '', uri);
                     }
                 } else {
+                    $html.removeClass('firefox-latest')
                     show_scene(2);
                     // For IE < 11 we supress the auto-download since this
                     // will soon be triggered using a popup on bedrock prior
