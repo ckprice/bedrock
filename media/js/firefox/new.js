@@ -20,7 +20,9 @@
         latestFirefoxVersion = parseInt(latestFirefoxVersion.split('.')[0], 10);
 
         if (isFirefoxUpToDate(latestFirefoxVersion + '')) {
-            $html.addClass('firefox-latest');
+            if (window.location.hash !== '#download-fx') {
+                $html.addClass('firefox-latest');
+            }
         } else {
             $html.addClass('firefox-old');
         }
@@ -225,7 +227,6 @@
                         window.history.replaceState({}, '', uri);
                     }
                 } else {
-                    $html.removeClass('firefox-latest')
                     show_scene(2);
                     // For IE < 11 we supress the auto-download since this
                     // will soon be triggered using a popup on bedrock prior
