@@ -413,6 +413,39 @@
       <a class="all-events" href="#">See all events</a>
     </div>
   </section>
+
+  <section id="secondary-links">
+    <ul>
+      <li>
+        <a class="add-ons" href="#">
+          <h2>{{ _('Add-ons') }}</h2>
+          <p>{{ _('Sed sodales interdum adipiscing. Nulla ut congue ligula purus augue.') }}</p>
+        </a>
+      </li>
+      <li>
+        <a class="careers" href="#">
+          <h2>{{ _('Careers') }}</h2>
+          <p>{{ _('Sed sodales interdum adipiscing. Nulla ut congue ligula purus augue.') }}</p>
+        </a>
+      </li>
+      <li>
+        <a class="help" href="#">
+          <h2>{{ _('Need help?') }}</h2>
+          <p>{{ _('Sed sodales interdum adipiscing. Nulla ut congue ligula purus augue.') }}</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="newsletter-signup">
+    <div class="container">
+      {% if LANG == 'en-US' %}
+        {{ mozorg_newsletter_form() }}
+      {% else %}
+        {{ email_newsletter_form() }}
+      {% endif %}
+    </div>
+  </section>
 </main>
 
 {% endblock %}
