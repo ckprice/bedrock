@@ -531,7 +531,7 @@ def release_notes(request, fx_version, product='Firefox'):
         return HttpResponseRedirect(releasenotes_url(release))
 
     new_features, known_issues = release.notes(public_only=not settings.DEV)
-    
+
     if release.product == 'Firefox for Android':
         download_url = 'https://play.google.com/store/apps/details?id=org.mozilla.firefox'
     else:
