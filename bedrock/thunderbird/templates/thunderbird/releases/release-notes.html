@@ -88,7 +88,6 @@
 
   {% block notes_sidebar %}
     <aside id="sidebar" class="sidebar">
-      <!--
       <section id="try">
         <h3>{{ _('Try Thunderbird %s')|format(channel_name) }}</h3>
         <ol>
@@ -114,14 +113,11 @@
           </li>
         </ol>
       </section>
-      -->
-      <section id="try">
-        <h3>{{ _('Also try:') }}</h3>
-        <ol>
-          <li class=""><a href="https://addons.mozilla.org/thunderbird/">{{ _('Customize') }}</a></li>
-          <li class=""><a href="{{ url('mozorg.contribute') }}">{{ _('Get Involved') }}</a></li>
-          <li class=""><a href="{{ url('thunderbird.system_requirements', version) }}">{{ _('Check') }}</a></li>
-        </ol>
+
+      <section id="get-involved">
+        <h3>{{ _('Want to get involved?') }}</h3>
+        <p>{{ _('Did you know that most of the content in Thunderbird Support was written by volunteers?') }}<br>
+        <a href="{{ url('mozorg.contribute') }}">{{ _('Find out more') }}</a></p>
       </section>
 
       <section id="problems">
